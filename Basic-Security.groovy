@@ -7,9 +7,8 @@ import hudson.security.*
   
 def instance = Jenkins.getInstance();
 def hudsonRealm = new HudsonPrivateSecurityRealm(false);
-  
-instance.setInstallState(InstallState.INITIAL_SETUP_COMPLETED);
 
-hudsonRealm.createAccount("pawash","ahuja");
+hudsonRealm.createAccount("pawash","ahuja");  
 instance.setSecurityRealm(hudsonRealm);
+instance.setInstallState(InstallState.INITIAL_SETUP_COMPLETED);
 instance.save();
